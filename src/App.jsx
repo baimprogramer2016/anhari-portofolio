@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import p from "./assets/p.jpeg";
+import cv from "./assets/cv_anhari.pdf";
 
 function App() {
   // State untuk menyimpan data portofolio yang sedang diklik
@@ -36,7 +37,7 @@ function App() {
       description:
         "Aplikasi manajemen dokumen berbasis web untuk internal perusahaan",
       tags: ["Laravel", "Inertia React"],
-      photos: ["edoc_1.png"],
+      photos: ["edoc_1.png", "edoc_2.png", "edoc_3.png"],
     },
     {
       title: "Bridging SIMRS & Satu Sehat",
@@ -128,10 +129,26 @@ function App() {
             akhirnya, stabilitas lebih penting daripada kerumitan.
           </p>
           <div className="flex justify-center md:justify-start gap-4">
-            <button className="px-6 py-3 bg-blue-900 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition-all">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://wa.me/6285814479788?text=" +
+                    encodeURIComponent("Halo"),
+                )
+              }
+              className="px-6 py-3 bg-blue-900 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition-all"
+            >
               Hubungi Saya
             </button>
-            <button className="px-6 py-3 bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold rounded-lg shadow-sm transition-all">
+            <button
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = cv;
+                link.download = "CV_Anhari.pdf";
+                link.click();
+              }}
+              className="cursor-pointer px-6 py-3 bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold rounded-lg shadow-sm transition-all"
+            >
               Lihat Resume
             </button>
           </div>
